@@ -39,7 +39,7 @@ Students can make the most of their library experience with the following functi
 
 The system's database schema ensures data integrity and efficiency. Here are the key tables:
 
-### Table: librarian
+
 ![Untitled](https://github.com/Anklet9/selective-spark-9795/assets/75060938/54fe123c-f64e-422d-bb87-38114eb4f6dc)
 
 ## Getting Started
