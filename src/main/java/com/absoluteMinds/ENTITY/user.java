@@ -2,6 +2,9 @@ package com.absoluteMinds.ENTITY;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 public class user {
     @Id
@@ -15,6 +18,9 @@ public class user {
     private String password;
     @Column(nullable = false, columnDefinition = "int default 0")
     private int isDeleted;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<rental> rentals = new ArrayList<>();
 
     public user() {
         super();
@@ -58,4 +64,19 @@ public class user {
         this.isDeleted = isDeleted;
     }
 
+    public int getUserId() {
+        return userID;
+    }
+
+    public void setUserId(int userId) {
+        this.userID = userId;
+    }
+
+    public List<rental> getRentals() {
+        return rentals;
+    }
+
+    public void setRentals(List<rental> rentals) {
+        this.rentals = rentals;
+    }
 }

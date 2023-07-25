@@ -19,8 +19,9 @@ public class librarianServiceImpl implements librarianService {
     }
 
     @Override
-    public void changePassword(String oldPassword, String newPassword) throws SomeThingWentWrongException {
-
+    public void changePassword(int userID,String oldPassword, String newPassword) throws SomeThingWentWrongException {
+        librarianDAO dao = new librarianDAOImpl();
+        dao.changePassword(userID,oldPassword,newPassword);
     }
 
     @Override
