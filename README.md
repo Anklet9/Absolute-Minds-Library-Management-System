@@ -1,5 +1,5 @@
 # Absolute Minds Library Management System
-![Absolute Minds](https://cdn.discordapp.com/attachments/1128079625818480751/1133856878674329680/icons8-library-100.png)
+![Absolute Minds](https://cdn.discordapp.com/attachments/1128079625818480751/1151110105224454225/online-library-2769744-2302762.webp)
 
 Welcome to the Absolute Minds Library Management System! This software solution is designed to efficiently manage the operations of your library, making book management, rental transactions, and feedback collection a breeze. Whether you're a librarian or a student, this platform provides you with the tools to make the most of your library experience.
 
