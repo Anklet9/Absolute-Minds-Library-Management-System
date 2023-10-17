@@ -74,4 +74,13 @@ public interface bookDAO {
      * @throws NoRecordFoundException if no rented book record is found with the provided bookId.
      */
     boolean returnBook(int bookId) throws SomeThingWentWrongException, NoRecordFoundException;
+    
+    /**
+     * Retrieves a list of all currently rented books from the system.
+     *
+     * @return A list containing all rented book records.
+     * @throws SomeThingWentWrongException if an unexpected error occurs while retrieving the rented books.
+     * @throws NoRecordFoundException if no rented book records are found in the system.
+     */
+    List<rental> getAllRentedBooks() throws SomeThingWentWrongException, NoRecordFoundException;
 }

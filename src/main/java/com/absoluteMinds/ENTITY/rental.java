@@ -1,5 +1,6 @@
 package com.absoluteMinds.ENTITY;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -12,10 +13,12 @@ public class rental {
 
     @ManyToOne(fetch = FetchType.EAGER) // Lazy fetching for Book entity
     @JoinColumn(name = "book_id", nullable = false)
+//    @JsonIgnore
     private book book;
 
     @ManyToOne(fetch = FetchType.EAGER) // Lazy fetching for User entity
     @JoinColumn(name = "user_id", nullable = false)
+//    @JsonIgnore
     private user user;
 
     @Column(nullable = false)
@@ -64,4 +67,16 @@ public class rental {
     public void setReturnDate(LocalDate returnDate) {
         this.returnDate = returnDate;
     }
+
+    @Override
+    public String toString() {
+        return "\t" + "\u001b[36m┌───────────── ALL RENTED BOOK ──────────────────────\u001b[0m" + "\n" +
+                "\t"+ "\u001b[36m│ " + "Rental ID      : " + rentalId + "\u001b[0m\n" +
+                "\t"+ "\u001b[36m│ " + "Rented Date    : " + rentedDate + "\u001b[0m\n" +
+                "\t"+ "\u001b[36m│ " + "Return Date    : " + returnDate + "\u001b[0m\n" +
+                "\t"+ "\u001b[36m│ " + "Book ID        : " + (book != null ? book.getBookId() : "N/A" )+ "\u001b[0m\n" +
+                "\t"+ "\u001b[36m│ " + "User ID        : " + (user != null ? user.getUserId() : "N/A" )+ "\u001b[0m\n" +
+                "\t" +"\u001b[36m└─────────────────────────────────────────\u001b[0m";
+    }
+
 }

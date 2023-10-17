@@ -113,10 +113,11 @@ public class librarianUI {
         System.out.println("\t0. Log Out From Librarian Account\u001b[0m");
 
         String[] s = new String[]{""};
-        System.out.print("\t\u001b[36mEnter Your Choice\u001b[0m : ");
-        int choice = Integer.parseInt(sc.nextLine());
+        int choice = 0;
 
         do {
+            System.out.print("\t\u001b[36mEnter Your Choice\u001b[0m : ");
+            choice = Integer.parseInt(sc.nextLine());
             switch (choice) {
                 case 1 -> bookUI.addBook(sc);
                 case 2 -> bookUI.updateBookDetails(sc);
