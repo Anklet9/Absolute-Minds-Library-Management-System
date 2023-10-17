@@ -52,4 +52,11 @@ public class bookServiceImpl implements bookService{
         bookDAO dao = new bookDAOImpl();
         return dao.returnBook(bookId);
     }
+
+    @Override
+    public List<rental> getAllRentedBooks() throws SomeThingWentWrongException, NoRecordFoundException {
+        bookDAO dao = new bookDAOImpl();
+        return dao.getAllRentedBooks();
+    }
+
 }

@@ -74,4 +74,6 @@ public interface bookService {
      * @throws NoRecordFoundException if no book record is found with the provided bookId.
      */
     boolean returnBook(int bookId) throws SomeThingWentWrongException, NoRecordFoundException;
+
+    List<rental> getAllRentedBooks() throws SomeThingWentWrongException, NoRecordFoundException;
 }

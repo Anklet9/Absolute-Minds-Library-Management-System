@@ -1,12 +1,14 @@
 package com.absoluteMinds.UI;
 
 import com.absoluteMinds.ENTITY.book;
+import com.absoluteMinds.ENTITY.rental;
 import com.absoluteMinds.EXCEPTIONS.NoRecordFoundException;
 import com.absoluteMinds.EXCEPTIONS.SomeThingWentWrongException;
 import com.absoluteMinds.SERVICE.bookService;
 import com.absoluteMinds.SERVICE.bookServiceImpl;
 import jakarta.persistence.PersistenceException;
 
+import java.util.List;
 import java.util.Scanner;
 
 import static java.lang.Integer.parseInt;
@@ -65,9 +67,18 @@ public class bookUI {
         }
     }
 
-    public static void viewStatus(Scanner sc){
-
-    }
+        public static void viewStatus(Scanner sc){
+            bookService service = new bookServiceImpl();
+            try {
+                List<rental>allRentedBooks=service.getAllRentedBooks();
+                for (rental rk : allRentedBooks) {
+                    System.out.println(rk.toString());
+                }
+                librarianUI.librarianMenu(sc);
+            }catch (SomeThingWentWrongException |NoRecordFoundException e) {
+                System.out.println("\t"+e.getMessage());
+            }
+        }
     public static void viewFeedback(Scanner sc){
 
     }

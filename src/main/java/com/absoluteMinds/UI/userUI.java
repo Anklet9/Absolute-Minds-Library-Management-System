@@ -110,7 +110,7 @@ public class userUI {
             System.out.println("\t\u001b[45m\u001b[1m\t\t\t USER MENU\t\t\t\u001b[0m");
             System.out.println("\t\u001b[35m================================\u001b[0m");
             System.out.println("\t\u001b[35m1. View Available Books");
-//            System.out.println("2. View Fe");
+//            System.out.println("2. View Feedback");
             System.out.println("\t2. Rent a Book");
             System.out.println("\t3. View All Rented Book");
             System.out.println("\t4. Return a Book");

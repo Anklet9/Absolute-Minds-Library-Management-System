@@ -243,4 +243,31 @@ public class bookDAOImpl implements bookDAO{
         }
         return bk;
     }
+
+
+    @Override
+    public List<rental> getAllRentedBooks() throws SomeThingWentWrongException, NoRecordFoundException {
+        EntityManager em = null;
+        List<rental> allRentals = null;
+
+        try {
+            em = utils.getEntityManager();
+
+            // Retrieve all rentals
+            TypedQuery<rental> query = em.createQuery("SELECT r FROM rental r", rental.class);
+            allRentals = query.getResultList();
+
+            if (allRentals.isEmpty()) {
+                throw new NoRecordFoundException("No rented books found in the system.");
+            }
+        } catch (PersistenceException e) {
+            throw new SomeThingWentWrongException("Unable to retrieve rented books, try again later.");
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+        }
+        return allRentals;
+    }
+
 }
